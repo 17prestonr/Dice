@@ -19,9 +19,11 @@ void draw()
       bob = new Die(x,y);
       bob.show();
       bob.roll();
-      dieTotal += dieNumber;
     }
   }
+  fill(0);
+  textSize(15);
+  text("Total: " + dieTotal, 2, 480);
 }
 
 void mousePressed()
@@ -48,7 +50,8 @@ class Die //models one single dice cube
   void show()
   {  
     int dieNumber;
-    dieNumber = ((int)(Math.random() * 6) + 1);
+    dieNumber = myValue;
+    dieTotal += dieNumber;
     
     {
       if (dieNumber <= 1 ){
